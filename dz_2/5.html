@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework</title>
+</head>
+<body>
+<!--
+Обязательное задание.
+
+Необходимо скопировать и вставить в данный скрипт все функции из 4 задания.
+Необходимо реализовать функцию:
+mathOperation(arg1, arg2, operation);
+Параметры:
+arg1 - первое число.
+arg2 - второе число.
+operation - строка, которая содержит один символ из: "+", "-", "*", "/".
+Функция mathOperation должна вернуть результат операции, который был передан в
+параметр operation для двух первых аргументов (arg1 и arg2).
+Функция mathOperations должна использовать для вычисления функции из 4 задания.
+
+Примеры вызова функции:
+console.log(mathOperation(5, 3, "+")); // 8
+console.log(mathOperation(5, 3, ":)")); // NaN
+
+Функции mathOperation всегда передаются корректные числа, проверки на NaN,
+Infinity делать не нужно, однако, в случае если был передан некорректный
+аргумент в параметр operation, необходимо вернуть NaN.
+
+Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
+-->
+<script>
+    "use strict";
+
+    console.log(mathOperations(2, 2, '+'));
+    console.log(mathOperations(2, 2, '-'));
+    console.log(mathOperations(2, 2, '*'));
+    console.log(mathOperations(2, 2, ':'));
+    console.log(mathOperations(2, 2, ';)'));
+
+    /*
+    * The result of the operation that was passed to the operation parameter for the first two arguments (arg1 and arg2)
+    * @param {number} a First term
+    * @param {number} b Second term
+    * @param {string} b Operation
+    * @return {number} The result of the operation between a and b
+    */
+    function mathOperations(arg1, arg2, operation) {
+        switch (operation) {
+            case '+':
+                return calcSum(arg1, arg2);
+            case '-':
+                return calcDiff(arg1, arg2);
+            case '*':
+                return calcMultiple(arg1, arg2);
+            case ':':
+                return calcDiv(arg1, arg2);
+            default:
+                return NaN;
+        }
+    }
+
+    /*
+    * Counts the sum of two numbers
+    * @param {number} a First term
+    * @param {number} b Second term
+    * @return {number} Sum of a and b
+    */
+    function calcSum(a, b) {
+        return a + b;
+    }
+
+    /*
+    * Counts the difference between the greater and the lesser of the given numbers, return 0 if numbers are equal
+    * @param {number} a First term
+    * @param {number} b Second term
+    * @return {number} Diff of a and b
+    */
+    function calcDiff(a, b) {
+        return a > b ? a - b : b - a;
+    }
+
+    /*
+    * Counts the product of two numbers
+    * @param {number} a First term
+    * @param {number} b Second term
+    * @return {number} Product of a and b
+    */
+    function calcMultiple(a, b) {
+        return a * b;
+    }
+
+    /*
+    * Divides a by b if b is not zero
+    * @param {number} a First term
+    * @param {number} b Second term
+    * @return {number} Dividing a by b
+    */
+    function calcDiv(a, b) {
+        return b !== 0 ? a / b : 'На ноль делить нельзя!';
+    }
+</script>
+</body>
+</html>

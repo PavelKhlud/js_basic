@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework</title>
+</head>
+<body>
+<!--
+Обязательное задание.
+
+Необходимо реализовать четыре функции, каждая функция должна принимать по два
+числа и выполнять одну из операций (каждая функция выполняет одну из них):
+1. Сложение
+2. Разность
+3. Умножение
+4. Деление
+
+Необходимо сделать так, чтобы функция вернула число, например выражение
+`console.log(sum(2, 6));` должно вывести число 8 в консоль (sum - функция
+сложения в данном примере, ваши названия функций могут отличаться).
+
+Округлять значения, которые возвращают функции не нужно, однако, обратите
+внимание на разность, функция должна вычесть из большего числа меньшее, либо
+вернуть 0, если числа равны.
+
+Функциям всегда передаются корректные числа, проверки на NaN, Infinity делать
+не нужно.
+
+Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
+-->
+<script>
+    "use strict";
+
+    console.log(calcSum(3, 4));
+    console.log(calcDiff(5, 5));
+    console.log(calcMultiple(24, 3))
+    console.log(calcDiv(5, 2));
+
+    /*
+    * Counts the sum of two numbers
+    * @param {number} a First term
+    * @param {number} b Second term
+    * @return {number} Sum of a and b
+    */
+    function calcSum(a, b) {
+        return a + b;
+    }
+
+    /*
+    * Counts the difference between the greater and the lesser of the given numbers, return 0 if numbers are equal
+    * @param {number} a First term
+    * @param {number} b Second term
+    * @return {number} Diff of a and b
+    */
+    function calcDiff(a, b) {
+        return a > b ? a - b : b - a;
+    }
+
+    /*
+    * Counts the product of two numbers
+    * @param {number} a First term
+    * @param {number} b Second term
+    * @return {number} Product of a and b
+    */
+    function calcMultiple(a, b) {
+        return a * b;
+    }
+
+    /*
+    * Divides a by b if b is not zero
+    * @param {number} a First term
+    * @param {number} b Second term
+    * @return {number} Dividing a by b
+    */
+    function calcDiv(a, b) {
+        return b !== 0 ? a / b : 'На ноль делить нельзя!';
+    }
+</script>
+</body>
+</html>
